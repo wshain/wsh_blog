@@ -1,7 +1,7 @@
 <!doctype html>
 <html
   lang="zh-cn"
-  
+  data-theme="dark"
 >
   <head>
     <meta charset="utf-8" />
@@ -29,6 +29,12 @@
 />
 
 
+  <script async src="https://hm.baidu.com/hm.js?true"></script>
+<script data-pjax>
+  var _hmt = _hmt || [];
+  _hmt.push(["_trackPageview", location.pathname]);
+</script>
+
 
 
 
@@ -38,7 +44,7 @@
 
 
 <script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"clipboard\":{\"copyright\":{\"content\":\"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！\",\"count\":50,\"enable\":false},\"fail\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"success\":\"复制成功(*^▽^*)\"},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_tq6stt6tcg\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":\"本文最后更新于 {time}，请注意文中内容可能已经发生变化。\"}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"clipboard\":{\"copyright\":{\"content\":\"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！\",\"count\":50,\"enable\":true},\"fail\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"success\":\"复制成功(*^▽^*)\"},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_tq6stt6tcg\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":\"本文最后更新于 {time}，请注意文中内容可能已经发生变化。\"}}");
 </script>
 
 
@@ -150,7 +156,7 @@
 
 
   
- <link rel="stylesheet" href="/wsh_blog/css/main.min.099a3709816827598728c309f239444b4c5561c4ff85f6454beab4842288f561.css" />
+ <link rel="stylesheet" href="/wsh_blog/css/main.min.a339a96817045ce3e363e67b9badf197adb5340f819475654e9ba7264a067640.css" />
 
 
 
@@ -310,6 +316,8 @@
   <nav id="sub-nav">
     <a id="nav-rss-link" class="nav-icon" href="https://wshain.github.io/wsh_blog/categories/index.xml" title="RSS 订阅" target="_blank"></a>
     
+    
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a>
     
   </nav>
 </div>
@@ -542,7 +550,7 @@
       <div>
         <span class="icon-brush"
           >&nbsp;
-            9
+            7
           </span
         >
         &nbsp;|&nbsp;
@@ -674,6 +682,22 @@
 
     </div>
     
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/wsh_blog/images/reimu.png" />
+        </div>
+      </div>
+    
     
 
 
@@ -770,6 +794,72 @@
 
 
 
+  <script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/wsh_blog\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "",
+        apiKey: "",
+        indexName: "",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    integrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+
+
+
+
+  
+      
+      <script src="/wsh_blog/js/algolia_search.js" integrity="" crossorigin="anonymous" ></script>
+      
+
+
 
 
   
@@ -800,6 +890,29 @@
 </script>
 
 
+
+
+
+<script>
+  function initLive2d() {
+    live2d.init('https:\/\/fastly.jsdelivr.net\/gh\/D-Sketon\/plugin-live2d\/', {themeTipsPath: ""});
+  }
+</script> 
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://fastly.jsdelivr.net/gh/D-Sketon/plugin-live2d/js/live2d-autoload.js"
+    
+    async
+    
+    onload="initLive2d()"
+    
+  ></script>
 
 
 
@@ -864,6 +977,39 @@
 
 
 
+
+<script data-pjax>
+  var giscusContainer = document.querySelector('.giscus');
+  if (giscusContainer) {
+    const giscusScript = document.createElement('script');
+    const domMode = document.documentElement.getAttribute("data-theme");
+    giscusScript.src = 'https://giscus.app/client.js';
+    giscusScript.setAttribute('data-repo', '');
+    giscusScript.setAttribute('data-repo-id', '');
+    giscusScript.setAttribute('data-category', '');
+    giscusScript.setAttribute('data-category-id', '');
+    giscusScript.setAttribute('data-mapping', '0');
+    giscusScript.setAttribute('data-strict', '0');
+    giscusScript.setAttribute('data-reactions-enabled', '1');
+    giscusScript.setAttribute('data-emit-metadata', '0');
+    giscusScript.setAttribute('data-input-position', 'bottom');
+    giscusScript.setAttribute('data-theme', domMode === 'dark' ? 'dark' : 'light');
+    giscusScript.setAttribute('data-lang', 'zh-CN');
+    giscusScript.setAttribute('crossorigin', 'anonymous');
+    giscusScript.async = true;
+    giscusContainer.appendChild(giscusScript);
+    document.body.addEventListener('light-theme-set', () => {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'light' } } }, 'https://giscus.app');
+    });
+    document.body.addEventListener('dark-theme-set', () => {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: { setConfig: { theme: 'dark' } } }, 'https://giscus.app');
+    });
+}
+</script>
 
     
     
